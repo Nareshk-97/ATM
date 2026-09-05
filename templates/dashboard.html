@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+
+{% block extracss %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="dashboard-page">
+
+    <div class="dashboard-container">
+
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+
+            <div class="welcome-text">
+
+                <p class="small-heading">
+                    PERSONAL BANKING
+                </p>
+
+                <h1>
+                    Welcome back,
+                    <span>{{ username }}</span> 👋
+                </h1>
+
+                <p class="welcome-description">
+                    Manage your account, move your money and
+                    review your transactions securely.
+                </p>
+
+            </div>
+
+
+            <div class="security-badge">
+
+                <span class="security-icon">🔒</span>
+
+                <div>
+                    <strong>Secure Session</strong>
+                    <small>Your account is protected</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Account Overview -->
+        <div class="account-card">
+
+            <div class="account-card-top">
+
+                <div>
+
+                    <p class="balance-label">
+                        ACCOUNT OVERVIEW
+                    </p>
+
+                    <h2>
+                        Ready to manage your money?
+                    </h2>
+
+                    <p class="balance-description">
+                        Choose an action below to continue
+                        with your account.
+                    </p>
+
+                </div>
+
+
+                <div class="card-chip">
+                    <span>ATM</span>
+                </div>
+
+            </div>
+
+
+            <div class="account-card-bottom">
+
+                <div class="account-status">
+                    <span class="status-dot"></span>
+                    Account Active
+                </div>
+
+                <span class="account-type">
+                    DIGITAL BANKING
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Section Heading -->
+        <div class="section-heading">
+
+            <div>
+                <p class="section-label">
+                    QUICK ACTIONS
+                </p>
+
+                <h2>
+                    What would you like to do?
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- Dashboard Options -->
+        <div class="dashboard-options">
+
+
+            <!-- Check Balance -->
+            <a href="/checkBalance"
+               class="dashboard-card">
+
+                <div class="card-top">
+
+                    <div class="card-icon balance-icon">
+                        ₹
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Check Balance
+                    </h3>
+
+                    <p>
+                        View your current account balance
+                        and available funds.
+                    </p>
+
+                </div>
+
+                <div class="card-link">
+                    View balance
+                    <span>→</span>
+                </div>
+
+            </a>
+
+
+            <!-- Deposit -->
+            <a href="/deposit"
+               class="dashboard-card">
+
+                <div class="card-top">
+
+                    <div class="card-icon deposit-icon">
+                        +
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Deposit Money
+                    </h3>
+
+                    <p>
+                        Add money to your account quickly
+                        and securely.
+                    </p>
+
+                </div>
+
+                <div class="card-link">
+                    Make a deposit
+                    <span>→</span>
+                </div>
+
+            </a>
+
+
+            <!-- Withdraw -->
+            <a href="/withdraw"
+               class="dashboard-card">
+
+                <div class="card-top">
+
+                    <div class="card-icon withdraw-icon">
+                        −
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Withdraw Money
+                    </h3>
+
+                    <p>
+                        Withdraw funds from your account
+                        whenever you need them.
+                    </p>
+
+                </div>
+
+                <div class="card-link">
+                    Make a withdrawal
+                    <span>→</span>
+                </div>
+
+            </a>
+
+
+            <!-- Transactions -->
+            <a href="/viewtransactions"
+               class="dashboard-card">
+
+                <div class="card-top">
+
+                    <div class="card-icon transaction-icon">
+                        ≡
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Transactions
+                    </h3>
+
+                    <p>
+                        Review your recent account
+                        transaction history.
+                    </p>
+
+                </div>
+
+                <div class="card-link">
+                    View transactions
+                    <span>→</span>
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+        <!-- Bottom Information -->
+        <div class="dashboard-footer-card">
+
+            <div class="info-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Banking made simple
+                </strong>
+
+                <p>
+                    Your account information is handled
+                    securely. Always remember to log out
+                    after using a shared device.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

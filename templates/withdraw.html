@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Withdraw Money
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/withdraw.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="withdraw-page">
+
+    <div class="withdraw-container">
+
+        <!-- Page Header -->
+        <div class="page-header">
+
+            <p class="page-label">
+                MONEY MANAGEMENT
+            </p>
+
+            <h1>
+                Withdraw Money
+            </h1>
+
+            <p class="page-description">
+                Withdraw funds from your account quickly and securely.
+            </p>
+
+        </div>
+
+
+        <!-- Main Withdrawal Card -->
+        <div class="withdraw-card">
+
+            <div class="withdraw-card-header">
+
+                <div>
+
+                    <p class="card-label">
+                        WITHDRAW FUNDS
+                    </p>
+
+                    <h2>
+                        Make a Withdrawal
+                    </h2>
+
+                    <p class="card-description">
+                        Enter the amount you would like
+                        to withdraw from your account.
+                    </p>
+
+                </div>
+
+                <div class="withdraw-icon">
+                    −
+                </div>
+
+            </div>
+
+
+            <!-- Withdrawal Form -->
+            <form method="post">
+
+                <div class="input-section">
+
+                    <label for="amount">
+                        Withdrawal Amount
+                    </label>
+
+                    <div class="amount-input">
+
+                        <span class="currency-symbol">
+                            ₹
+                        </span>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            name="amount"
+                            placeholder="Enter amount"
+                            min="1"
+                            required
+                        >
+
+                    </div>
+
+                    <p class="input-help">
+                        Enter a positive amount to withdraw.
+                    </p>
+
+                </div>
+
+
+                <!-- Message -->
+                {% if info %}
+
+                <div class="message-box">
+
+                    <span class="message-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        {{ info }}
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+
+                <!-- Submit Button -->
+                <button type="submit"
+                        class="withdraw-button">
+
+                    <span>
+                        Withdraw Money
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Security Information -->
+        <div class="security-card">
+
+            <div class="security-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <strong>
+                    Secure Withdrawal
+                </strong>
+
+                <p>
+                    Your withdrawal request is processed
+                    securely through your ATM account.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom Hint -->
+        <div class="withdraw-hint">
+
+            <span>
+                💡
+            </span>
+
+            <p>
+                Make sure you have sufficient funds
+                available before making a withdrawal.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

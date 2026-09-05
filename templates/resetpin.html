@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Reset PIN
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/resetpin.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="reset-page">
+
+    <div class="reset-container">
+
+        <!-- Branding Section -->
+        <div class="reset-brand">
+
+            <div class="brand-logo">
+                ATM
+            </div>
+
+            <p class="brand-label">
+                ACCOUNT SECURITY
+            </p>
+
+            <h1>
+                Create a<br>
+                <span>new PIN.</span>
+            </h1>
+
+            <p class="brand-description">
+                Set a new secure PIN for your account.
+                Choose something memorable and keep it private.
+            </p>
+
+
+            <!-- Security Features -->
+            <div class="security-list">
+
+                <div class="security-item">
+
+                    <span class="security-check">
+                        ✓
+                    </span>
+
+                    <div>
+                        <strong>
+                            Secure Reset
+                        </strong>
+
+                        <small>
+                            Your PIN is protected
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="security-item">
+
+                    <span class="security-check">
+                        ✓
+                    </span>
+
+                    <div>
+                        <strong>
+                            Private Access
+                        </strong>
+
+                        <small>
+                            Never share your PIN
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Reset Card -->
+        <div class="reset-card">
+
+            <div class="card-header">
+
+                <div class="pin-icon">
+                    •••
+                </div>
+
+                <p class="card-label">
+                    PIN RECOVERY
+                </p>
+
+                <h2>
+                    Reset PIN
+                </h2>
+
+                <p>
+                    Enter and confirm your new PIN below.
+                </p>
+
+            </div>
+
+
+            <!-- Reset Form -->
+            <form method="post">
+
+                <!-- New PIN -->
+                <div class="input-group">
+
+                    <label for="npin">
+                        New PIN
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            •
+                        </span>
+
+                        <input
+                            type="password"
+                            id="npin"
+                            name="npin"
+                            placeholder="Enter new PIN"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Confirm PIN -->
+                <div class="input-group">
+
+                    <label for="cpin">
+                        Confirm PIN
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            •
+                        </span>
+
+                        <input
+                            type="password"
+                            id="cpin"
+                            name="cpin"
+                            placeholder="Confirm new PIN"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PIN Information -->
+                <div class="pin-guideline">
+
+                    <span>
+                        💡
+                    </span>
+
+                    <p>
+                        Make sure both PINs match before submitting.
+                    </p>
+
+                </div>
+
+
+                <!-- Message -->
+                {% if info %}
+
+                <div class="message-box">
+
+                    <span class="message-icon">
+                        !
+                    </span>
+
+                    <span>
+                        {{ info }}
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+
+                <!-- Button -->
+                <button type="submit"
+                        class="reset-button">
+
+                    <span>
+                        Reset PIN
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Security Note -->
+            <div class="security-note">
+
+                <span>
+                    🔒
+                </span>
+
+                <p>
+                    Your new PIN should be kept private
+                    and never shared with anyone.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

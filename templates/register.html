@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="register-page">
+
+    <div class="register-container">
+
+        <!-- Left Branding -->
+        <div class="register-brand">
+
+            <div class="brand-logo">
+                ATM
+            </div>
+
+            <p class="brand-label">
+                DIGITAL BANKING
+            </p>
+
+            <h1>
+                Start your<br>
+                <span>journey.</span>
+            </h1>
+
+            <p class="brand-description">
+                Create your account and experience
+                simple, secure and modern digital banking.
+            </p>
+
+            <div class="benefit-list">
+
+                <div class="benefit-item">
+                    <span>✓</span>
+                    <p>Secure account access</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span>✓</span>
+                    <p>Easy money management</p>
+                </div>
+
+                <div class="benefit-item">
+                    <span>✓</span>
+                    <p>Track your transactions</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Register Card -->
+        <div class="register-card">
+
+            <div class="card-header">
+
+                <p class="card-label">
+                    NEW ACCOUNT
+                </p>
+
+                <h2>
+                    Create account
+                </h2>
+
+                <p>
+                    Enter your details to get started.
+                </p>
+
+            </div>
+
+
+            <!-- Registration Form -->
+            <form method="post">
+
+                <!-- Username -->
+                <div class="input-group">
+
+                    <label for="uname">
+                        Username
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            👤
+                        </span>
+
+                        <input
+                            type="text"
+                            id="uname"
+                            name="uname"
+                            placeholder="Enter your username"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            @
+                        </span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PIN -->
+                <div class="input-group">
+
+                    <label for="pin">
+                        Create PIN
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            •
+                        </span>
+
+                        <input
+                            type="password"
+                            id="pin"
+                            name="pin"
+                            placeholder="Create your PIN"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Message -->
+                {% if info %}
+
+                <div class="message-box">
+
+                    <span class="message-icon">
+                        !
+                    </span>
+
+                    <span>
+                        {{ info }}
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+
+                <!-- Register Button -->
+                <button type="submit"
+                        class="register-button">
+
+                    <span>
+                        Create Account
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Login -->
+            <div class="login-section">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <a href="/login">
+                    Sign In
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

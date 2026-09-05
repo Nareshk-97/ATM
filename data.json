@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "demo",
+            "email": "demo@example.com",
+            "pin": "1234",
+            "history": [],
+            "balance": 0
+        }
+    ]
+}

@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Forgot PIN
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/forgotpin.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="forgot-page">
+
+    <div class="forgot-container">
+
+        <!-- Branding -->
+        <div class="forgot-brand">
+
+            <div class="brand-logo">
+                ATM
+            </div>
+
+            <p class="brand-label">
+                ACCOUNT RECOVERY
+            </p>
+
+            <h1>
+                Get back<br>
+                <span>securely.</span>
+            </h1>
+
+            <p class="brand-description">
+                Forgot your PIN? Don't worry.
+                We'll help you securely recover access
+                to your account.
+            </p>
+
+            <div class="security-item">
+
+                <span class="security-icon">
+                    🔒
+                </span>
+
+                <div>
+                    <strong>
+                        Secure Recovery
+                    </strong>
+
+                    <small>
+                        Your account remains protected
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Recovery Card -->
+        <div class="forgot-card">
+
+            <div class="card-header">
+
+                <p class="card-label">
+                    RESET ACCESS
+                </p>
+
+                <h2>
+                    Forgot PIN?
+                </h2>
+
+                <p>
+                    Enter your registered email address
+                    to continue.
+                </p>
+
+            </div>
+
+
+            <!-- Form -->
+            <form method="post">
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Registered Email
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            @
+                        </span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                    <p class="input-help">
+                        Use the email address linked to your account.
+                    </p>
+
+                </div>
+
+
+                <!-- Message -->
+                {% if info %}
+
+                <div class="message-box">
+
+                    <span class="message-icon">
+                        !
+                    </span>
+
+                    <span>
+                        {{ info }}
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+
+                <!-- Button -->
+                <button type="submit"
+                        class="recovery-button">
+
+                    <span>
+                        Continue
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Login -->
+            <div class="login-section">
+
+                <span>
+                    Remember your PIN?
+                </span>
+
+                <a href="/login">
+                    Back to Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

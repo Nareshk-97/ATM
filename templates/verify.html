@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Verify OTP
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/verify.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="verify-page">
+
+    <div class="verify-container">
+
+        <!-- Branding Section -->
+        <div class="verify-brand">
+
+            <div class="brand-logo">
+                ATM
+            </div>
+
+            <p class="brand-label">
+                ACCOUNT SECURITY
+            </p>
+
+            <h1>
+                Verify<br>
+                <span>your identity.</span>
+            </h1>
+
+            <p class="brand-description">
+                We've sent a verification code to help
+                keep your account secure.
+            </p>
+
+            <div class="security-item">
+
+                <span class="security-icon">
+                    🔒
+                </span>
+
+                <div>
+                    <strong>
+                        Secure Verification
+                    </strong>
+
+                    <small>
+                        Never share your OTP with anyone
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OTP Card -->
+        <div class="verify-card">
+
+            <div class="card-header">
+
+                <div class="otp-icon">
+                    #
+                </div>
+
+                <p class="card-label">
+                    VERIFICATION CODE
+                </p>
+
+                <h2>
+                    Enter OTP
+                </h2>
+
+                <p>
+                    Enter the one-time password sent to
+                    your registered email address.
+                </p>
+
+            </div>
+
+
+            <!-- OTP Form -->
+            <form method="post">
+
+                <div class="input-group">
+
+                    <label for="otp">
+                        One-Time Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            #
+                        </span>
+
+                        <input
+                            type="text"
+                            id="otp"
+                            name="otp"
+                            placeholder="Enter your OTP"
+                            maxlength="6"
+                            required
+                        >
+
+                    </div>
+
+                    <p class="input-help">
+                        Enter the verification code you received.
+                    </p>
+
+                </div>
+
+
+                <!-- Message -->
+                {% if info %}
+
+                <div class="message-box">
+
+                    <span class="message-icon">
+                        !
+                    </span>
+
+                    <span>
+                        {{ info }}
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+
+                <!-- Verify Button -->
+                <button type="submit"
+                        class="verify-button">
+
+                    <span>
+                        Verify OTP
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Security Note -->
+            <div class="otp-note">
+
+                <span>
+                    🛡️
+                </span>
+
+                <p>
+                    For your security, never share this
+                    verification code with anyone.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

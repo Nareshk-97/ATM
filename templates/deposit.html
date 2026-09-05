@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Deposit Money
+{% endblock %}
+
+
+{% block extracss %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/deposit.css') }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="deposit-page">
+
+    <div class="deposit-container">
+
+
+        <!-- Page Header -->
+        <div class="page-header">
+
+            <p class="page-label">
+                MONEY MANAGEMENT
+            </p>
+
+            <h1>
+                Deposit Money
+            </h1>
+
+            <p class="page-description">
+                Add funds to your account quickly and securely.
+            </p>
+
+        </div>
+
+
+        <!-- Main Deposit Card -->
+        <div class="deposit-card">
+
+
+            <!-- Card Header -->
+            <div class="deposit-card-header">
+
+                <div>
+
+                    <p class="card-label">
+                        ADD FUNDS
+                    </p>
+
+                    <h2>
+                        Make a Deposit
+                    </h2>
+
+                    <p class="card-description">
+                        Enter the amount you would like
+                        to deposit into your account.
+                    </p>
+
+                </div>
+
+
+                <div class="deposit-icon">
+                    +
+                </div>
+
+            </div>
+
+
+            <!-- Deposit Form -->
+            <form method="post">
+
+
+                <div class="input-section">
+
+                    <label for="amount">
+                        Deposit Amount
+                    </label>
+
+
+                    <div class="amount-input">
+
+                        <span class="currency-symbol">
+                            ₹
+                        </span>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            name="amount"
+                            placeholder="Enter amount"
+                            min="1"
+                            required
+                        >
+
+                    </div>
+
+                    <p class="input-help">
+                        Enter a positive amount to deposit.
+                    </p>
+
+                </div>
+
+
+                <!-- Message -->
+                {% if info %}
+
+                <div class="message-box">
+
+                    <span class="message-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        {{ info }}
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+
+                <!-- Submit -->
+                <button type="submit"
+                        class="deposit-button">
+
+                    <span>
+                        Deposit Money
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- Security Information -->
+        <div class="security-card">
+
+            <div class="security-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <strong>
+                    Secure Transaction
+                </strong>
+
+                <p>
+                    Your deposit request is processed
+                    securely through your ATM account.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom Hint -->
+        <div class="deposit-hint">
+
+            <span>
+                💡
+            </span>
+
+            <p>
+                After depositing money, you can check
+                your updated balance from the dashboard.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

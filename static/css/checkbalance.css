@@ -1,0 +1,661 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #071827;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+nav {
+    height: 70px;
+
+    background: rgba(7, 24, 39, 0.98);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 0 50px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+nav a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    margin-left: 35px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+nav a:hover {
+    color: #6ee7d8;
+}
+
+
+/* =========================================
+   BALANCE PAGE
+========================================= */
+
+.balance-page {
+
+    min-height: calc(100vh - 130px);
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(54, 134, 145, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(27, 76, 90, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #071827,
+            #0d2732,
+            #123d47
+        );
+
+    padding: 55px 25px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.balance-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.page-label {
+
+    color: #6ee7d8;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin: 0 0 10px;
+}
+
+
+.page-header h1 {
+
+    color: #ffffff;
+
+    font-size: 38px;
+
+    margin: 0;
+}
+
+
+.page-description {
+
+    color: #9db4bb;
+
+    font-size: 15px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================================
+   BALANCE CARD
+========================================= */
+
+.balance-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1a4b55,
+            #0d2b37
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    color: white;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.3);
+
+    margin-bottom: 25px;
+}
+
+
+.balance-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(110, 231, 216, 0.07);
+
+    right: -100px;
+
+    top: -150px;
+}
+
+
+.balance-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    left: -90px;
+
+    bottom: -100px;
+}
+
+
+/* =========================================
+   BALANCE CARD HEADER
+========================================= */
+
+.balance-card-header {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+}
+
+
+.balance-label {
+
+    color: #6ee7d8;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin: 0 0 10px;
+}
+
+
+.account-name {
+
+    color: #9fb8bf;
+
+    font-size: 13px;
+
+    margin: 0;
+}
+
+
+.account-name strong {
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   BALANCE ICON
+========================================= */
+
+.balance-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 15px;
+
+    background: rgba(110, 231, 216, 0.12);
+
+    border: 1px solid rgba(110, 231, 216, 0.2);
+
+    color: #6ee7d8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   BALANCE AMOUNT
+========================================= */
+
+.balance-amount {
+
+    position: relative;
+
+    z-index: 1;
+
+    margin-top: 45px;
+
+    color: #ffffff;
+
+    font-size: 52px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+
+.currency {
+
+    color: #6ee7d8;
+
+    font-size: 32px;
+
+    margin-right: 8px;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================
+   BALANCE CARD FOOTER
+========================================= */
+
+.balance-card-footer {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.active-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #d5e4e7;
+
+    font-size: 13px;
+}
+
+
+.status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #6ee7d8;
+
+    box-shadow:
+        0 0 10px rgba(110, 231, 216, 0.8);
+}
+
+
+.secure-text {
+
+    color: #819ba3;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   INFORMATION GRID
+========================================= */
+
+.balance-info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   INFORMATION CARD
+========================================= */
+
+.info-card {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 17px;
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+}
+
+
+.info-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================
+   INFO ICON
+========================================= */
+
+.info-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #e7f7f4;
+
+    color: #168276;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+.info-card h3 {
+
+    margin: 0 0 7px;
+
+    color: #17343e;
+
+    font-size: 15px;
+}
+
+
+.info-card p {
+
+    margin: 0;
+
+    color: #718087;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BOTTOM MESSAGE
+========================================= */
+
+.balance-message {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 16px;
+
+    padding: 20px 22px;
+}
+
+
+.message-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(110, 231, 216, 0.12);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.balance-message strong {
+
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+
+.balance-message p {
+
+    color: #8da6ad;
+
+    font-size: 12px;
+
+    margin: 5px 0 0;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    height: 60px;
+
+    background-color: #061523;
+
+    color: #8299a1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    nav {
+
+        height: 60px;
+
+        padding: 0 20px;
+    }
+
+
+    nav a {
+
+        margin-left: 20px;
+
+        font-size: 14px;
+    }
+
+
+    .balance-page {
+
+        padding: 35px 15px;
+    }
+
+
+    .page-header h1 {
+
+        font-size: 30px;
+    }
+
+
+    .balance-card {
+
+        padding: 25px;
+
+        border-radius: 20px;
+    }
+
+
+    .balance-amount {
+
+        font-size: 40px;
+
+        margin-top: 35px;
+    }
+
+
+    .currency {
+
+        font-size: 25px;
+    }
+
+
+    .balance-card-footer {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .balance-info-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .balance-message {
+
+        align-items: flex-start;
+    }
+
+}

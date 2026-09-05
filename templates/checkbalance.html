@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Check Balance
+{% endblock %}
+
+
+{% block extracss %}
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/checkbalance.css') }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="balance-page">
+
+    <div class="balance-container">
+
+        <!-- Page Header -->
+        <div class="page-header">
+
+            <p class="page-label">
+                ACCOUNT
+            </p>
+
+            <h1>
+                Account Balance
+            </h1>
+
+            <p class="page-description">
+                Here's your current available balance.
+            </p>
+
+        </div>
+
+
+        <!-- Balance Card -->
+        <div class="balance-card">
+
+            <div class="balance-card-header">
+
+                <div>
+
+                    <p class="balance-label">
+                        AVAILABLE BALANCE
+                    </p>
+
+                    <p class="account-name">
+                        Account holder:
+                        <strong>{{ username }}</strong>
+                    </p>
+
+                </div>
+
+
+                <div class="balance-icon">
+                    ₹
+                </div>
+
+            </div>
+
+
+            <div class="balance-amount">
+
+                <span class="currency">
+                    ₹
+                </span>
+
+                <span>
+                    {{ balance }}
+                </span>
+
+            </div>
+
+
+            <div class="balance-card-footer">
+
+                <div class="active-status">
+
+                    <span class="status-dot"></span>
+
+                    Account Active
+
+                </div>
+
+                <span class="secure-text">
+                    🔒 Secure Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Information Cards -->
+        <div class="balance-info-grid">
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3>
+                        Available Funds
+                    </h3>
+
+                    <p>
+                        Your displayed balance represents
+                        the funds currently available in
+                        your account.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🔒
+                </div>
+
+                <div>
+
+                    <h3>
+                        Secure Banking
+                    </h3>
+
+                    <p>
+                        Your account information is
+                        protected during your banking
+                        session.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom Message -->
+        <div class="balance-message">
+
+            <span class="message-icon">
+                💡
+            </span>
+
+            <div>
+
+                <strong>
+                    Manage your money with confidence
+                </strong>
+
+                <p>
+                    You can deposit or withdraw money
+                    from your dashboard at any time.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

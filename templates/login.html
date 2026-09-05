@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="login-page">
+
+    <div class="login-container">
+
+        <!-- Left Branding Section -->
+        <div class="login-brand">
+
+            <div class="brand-logo">
+                ATM
+            </div>
+
+            <p class="brand-label">
+                DIGITAL BANKING
+            </p>
+
+            <h1>
+                Welcome<br>
+                <span>back.</span>
+            </h1>
+
+            <p class="brand-description">
+                Access your account securely and
+                manage your money with confidence.
+            </p>
+
+            <div class="brand-security">
+                <span>🔒</span>
+
+                <div>
+                    <strong>Secure Banking</strong>
+                    <small>Your information is protected</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Login Card -->
+        <div class="login-card">
+
+            <div class="card-header">
+
+                <p class="card-label">
+                    ACCOUNT ACCESS
+                </p>
+
+                <h2>
+                    Sign in
+                </h2>
+
+                <p>
+                    Enter your credentials to continue.
+                </p>
+
+            </div>
+
+
+            <!-- Login Form -->
+            <form method="post">
+
+                <!-- Email -->
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            @
+                        </span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PIN -->
+                <div class="input-group">
+
+                    <label for="pin">
+                        PIN
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            •
+                        </span>
+
+                        <input
+                            type="password"
+                            id="pin"
+                            name="pin"
+                            placeholder="Enter your PIN"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Forgot PIN -->
+                <div class="forgot-row">
+
+                    <a href="/forgotpin">
+                        Forgot PIN?
+                    </a>
+
+                </div>
+
+
+                <!-- Message -->
+                {% if info %}
+
+                <div class="message-box">
+
+                    <span class="message-icon">
+                        !
+                    </span>
+
+                    <span>
+                        {{ info }}
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+
+                <!-- Login Button -->
+                <button type="submit"
+                        class="login-button">
+
+                    <span>
+                        Sign In
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Register -->
+            <div class="register-section">
+
+                <span>
+                    Don't have an account?
+                </span>
+
+                <a href="/register">
+                    Create Account
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
