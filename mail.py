@@ -1,27 +1,33 @@
-import smtplib  
+import os
+import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 SMTP_SERVER = "smtp.gmail.com"
-SMTP_PORT = 587 
-SENDER_EMAIL = "nareshkkille97@gmail.com"
-SENDER_PASSWORD = "ibzj lryc gmyh zdje"  
+SMTP_PORT = 587
+
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+SENDER_PASSWORD = os.getenv("SENDER_PASSWORD")
 
 
-def send_email(to_email,username,otp):
+def send_email(to_email, username, otp):
     try:
         msg = MIMEMultipart()
         msg["From"] = SENDER_EMAIL
         msg["To"] = to_email
-        msg["Subject"] = 'OTP Verification'
-        body = f'Hello {username}, Your OTP: {otp}'
-        msg.attach(MIMEText(body, "plain")) 
+        msg["Subject"] = "OTP Verification"
 
+        body = f"Hello {username}, Your OTP: {otp}"
+        msg.attach(MIMEText(body, "plain"))
 
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.starttls()
         server.login(SENDER_EMAIL, SENDER_PASSWORD)
-        server.sendmail(SENDER_EMAIL, to_email, msg.as_string())
+        server.sendmail(
+            SENDER_EMAIL,
+            to_email,
+            msg.as_string()
+        )
         server.quit()
 
         print(f"Email sent to {to_email}")
